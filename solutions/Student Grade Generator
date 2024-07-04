@@ -1,0 +1,25 @@
+function gradeStudent() {
+    // Prompt the user for input until a valid input is provided
+    let input;
+    do {
+        input = prompt("Enter the student's marks (between 0 and 100):");
+        input = parseFloat(input); // Convert input to a floating point number
+    } while (isNaN(input) || input < 0 || input > 100); // Validate input range
+
+    // Determine the grade based on the input marks
+    let grade;
+    if (input > 79) {
+        grade = 'A';
+    } else if (input >= 60 && input <= 79) {
+        grade = 'B';
+    } else if (input >= 50 && input <= 59) {
+        grade = 'C';
+    } else if (input >= 40 && input <= 49) {
+        grade = 'D';
+    } else {
+        grade = 'E';
+    }
+
+    // Output the grade to the user
+    alert(`The student's grade is: ${grade}`);
+}
